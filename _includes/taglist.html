@@ -1,0 +1,9 @@
+            {% if tags.size > 0 %}
+                <span class="taglist">
+                    <i class="fa fa-tag"></i>
+                    {% assign last = tags | last %}
+                    {% for tag in tags %}
+                        <a href="{{ site.baseurl }}/tags#{{ tag }}">{{ tag }}</a>{% if last != tag %},{% endif %}
+                    {% endfor %}    
+                </span>
+            {% endif %}

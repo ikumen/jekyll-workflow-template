@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+
+    {% include meta.html %}
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/static/styles/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <!-- <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a> -->
+          <h1 class="site-logo"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+          <div class="site-info">
+            <p class="site-description">
+              <span class="mobile-disabled">Subheading, description</span>
+            </p>
+          </div>
+
+          <nav>
+            <a href="{{ site.baseurl }}/">{{site.name}}</i></a>
+            <a href="{{ site.baseurl }}/about"><i class="fa fa-info-circle {% if page.url == '/about/' %}fa-selected{% endif %}" title="about me"></i></a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      {{ content }}
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          Copyright &copy; 2007-{{ site.time | date: '%Y' }} {{ site.name }}. All rights reserved.
+        </footer>
+      </div>
+    </div>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,400,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js"
+      ],{
+        callback:function(){
+          asyncLoader([], { callback:function() {
+              
+          }});
+        }
+      });
+    </script>
+
+    {% include analytics.html %}
+  </body>
+</html>
