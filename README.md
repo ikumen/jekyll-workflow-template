@@ -61,15 +61,20 @@ That's it for the server configuration, it's ready now to receive pushes from ou
 
 ## Local Configuration 
 
-I won't go into the details of how to use Jekyll, but on a local workstation or laptop, you'll need to set up a new site and initialize it as a Git managed repository.
+I won't go into the details of how to use Jekyll, but on a local workstation or laptop, you'll need to clone [this template](https://github.com/ikumen/jekyll-workflow-template) or set up a new site and initialize it as a Git managed repository.
 
 ``` bash
+# clone this template
+$ git clone git@github.com:ikumen/jekyll-workflow-template.git myblog
+
+# -- OR -- 
 # generate a new site under ./myblog
 $ jekyll new myblog
-
 # initialize myblog as a git repo
 $ cd myblog
 $ git init
+
+
 # where I keep original copy of my blog
 $ git remote add origin git@bitbucket.org:ikumen/myblog.git
 # the server we configured above
